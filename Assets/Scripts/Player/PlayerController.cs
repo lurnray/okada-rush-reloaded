@@ -41,6 +41,9 @@ public class PlayerController : MonoBehaviour
            Jump(); 
         }
 
+        if (SwipeManager.swipeUp)
+                Jump();
+
         }
         else 
         {
@@ -55,6 +58,19 @@ public class PlayerController : MonoBehaviour
                 desiredLane = 2;
         }
         if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            desiredLane--;
+            if (desiredLane == -1)
+                desiredLane = 0;
+        }
+
+        if (SwipeManager.swipeRight)
+        {
+            desiredLane++;
+            if (desiredLane == 3)
+                desiredLane = 2;
+        }
+        if (SwipeManager.swipeLeft)
         {
             desiredLane--;
             if (desiredLane == -1)
