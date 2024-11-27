@@ -204,7 +204,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 186958687}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1256597201}
+        m_TargetAssemblyTypeName: Events, Assembly-CSharp
+        m_MethodName: ReplayGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &186958687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -453,6 +465,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f70ec98cd8b8ff140a1fff6cc01f52a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOverPanel: {fileID: 1088919060}
 --- !u!4 &552294119
 Transform:
   m_ObjectHideFlags: 0
@@ -629,7 +642,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 619371571}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1256597201}
+        m_TargetAssemblyTypeName: Events, Assembly-CSharp
+        m_MethodName: QuitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &619371571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -848,13 +873,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 21.5, z: -45.3}
+  m_LocalRotation: {x: 0.18986493, y: -0.00024391084, z: -0.0012612859, w: 0.98180944}
+  m_LocalPosition: {x: -0, y: 13, z: -29}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 21.89, y: -0.059, z: -0.159}
 --- !u!114 &963194229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -946,6 +971,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1088919060}
   m_CullTransparentMesh: 1
+--- !u!1 &1256597200
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1256597202}
+  - component: {fileID: 1256597201}
+  m_Layer: 0
+  m_Name: Events
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1256597201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1256597200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f35b54744ed7e3b428c85a6c0b7dd11a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1256597202
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1256597200}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -27.541395, y: -16.618896, z: 59.354626}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1491480075
 GameObject:
   m_ObjectHideFlags: 0
@@ -1051,7 +1120,7 @@ Transform:
   m_GameObject: {fileID: 1491480075}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.4, z: 19.2}
+  m_LocalPosition: {x: 0, y: 1.4, z: -16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1182,9 +1251,9 @@ MonoBehaviour:
   - {fileID: 831497107064116090, guid: 93b8aa46739ec134fb85057c3247299e, type: 3}
   - {fileID: 3982109345252626139, guid: 4102e287d7ad92844a2692c3ebf5b78b, type: 3}
   tileLength: 30
-  numberOfTiles: 6
-  totalNumOfTiles: 8
-  zSpawn: 2
+  numberOfTiles: 5
+  zSpawn: 0
+  playerTransform: {fileID: 1491480079}
 --- !u!4 &2067063488
 Transform:
   m_ObjectHideFlags: 0
@@ -1358,3 +1427,4 @@ SceneRoots:
   - {fileID: 312247953}
   - {fileID: 2090118057}
   - {fileID: 552294119}
+  - {fileID: 1256597202}

@@ -4,63 +4,46 @@ using UnityEngine;
 
 public class TileManager : MonoBehaviour
 {
-    private List<GameObject> activeTiles;
+    private List<GameObject> activeTiles = new List<GameObject>();
     public GameObject[] tilePrefabs;
 
     public float tileLength = 30;
     public int numberOfTiles = 3;
-    public int totalNumOfTiles = 8;
+   // public int totalNumOfTiles = 5;
 
     public float zSpawn = 0;
 
-    private Transform playerTransform;
+    public Transform playerTransform;
 
     private int previousIndex;
 
     void Start()
     {
-        activeTiles = new List<GameObject>();
         for (int i = 0; i < numberOfTiles; i++)
         {
-            if(i==0)
-                SpawnTile();
-            else
-                SpawnTile(Random.Range(0, totalNumOfTiles));
+           if (i == 0) 
+           SpawnTile(0);
+           else
+           SpawnTile(Random.Range(0, tilePrefabs.Length));
         }
-
-        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
 
     }
     void Update()
     {
         if(playerTransform.position.z - 30 >= zSpawn - (numberOfTiles * tileLength))
         {
-            int index = Random.Range(0, totalNumOfTiles);
-            while(index == previousIndex)
-                index = Random.Range(0, totalNumOfTiles);
-
+            SpawnTile(Random.Range(0, tilePrefabs.Length));
             DeleteTile();
-            SpawnTile(index);
+            
         }
             
     }
 
-    public void SpawnTile(int index = 0)
+    public void SpawnTile(int tileIndex)
     {
-        GameObject tile = tilePrefabs[index];
-        if (tile.activeInHierarchy)
-            tile = tilePrefabs[index + 8];
-
-        if(tile.activeInHierarchy)
-            tile = tilePrefabs[index + 16];
-
-        tile.transform.position = Vector3.forward * zSpawn;
-        tile.transform.rotation = Quaternion.identity;
-        tile.SetActive(true);
-
-        activeTiles.Add(tile);
+        GameObject go = Instantiate(tilePrefabs[tileIndex], transform.forward * zSpawn, transform.rotation);
+        activeTiles.Add(go);
         zSpawn += tileLength;
-        previousIndex = index;
     }
 
     private void DeleteTile()

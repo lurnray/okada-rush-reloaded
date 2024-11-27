@@ -85,12 +85,20 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        controller.Move(direction * Time.deltaTime);
+        controller.Move(direction * Time.fixedDeltaTime);
     }
 
     private void Jump()
     {
         direction.y = jumpForce;
 
+    }
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if(hit.transform.tag == "Obstacle")
+        {
+            PlayerManager.gameOver = true;
+            
+        }
     }
 }
