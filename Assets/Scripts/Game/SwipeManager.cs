@@ -11,7 +11,8 @@ public class SwipeManager : MonoBehaviour
     private void Update()
     {
         tap = swipeDown = swipeUp = swipeLeft = swipeRight = false;
-        #region Standalone Inputs
+
+        // Standalone Inputs (for testing on PC with a mouse)
         if (Input.GetMouseButtonDown(0))
         {
             tap = true;
@@ -23,9 +24,8 @@ public class SwipeManager : MonoBehaviour
             isDraging = false;
             Reset();
         }
-        #endregion
 
-        #region Mobile Input
+        // Mobile Input
         if (Input.touches.Length > 0)
         {
             if (Input.touches[0].phase == TouchPhase.Began)
@@ -40,27 +40,27 @@ public class SwipeManager : MonoBehaviour
                 Reset();
             }
         }
-        #endregion
 
-        //Calculate the distance
+        // Calculate the distance
         swipeDelta = Vector2.zero;
         if (isDraging)
         {
-            if (Input.touches.Length < 0)
+            if (Input.touches.Length > 0) // Fixed touch check
                 swipeDelta = Input.touches[0].position - startTouch;
-            else if (Input.GetMouseButton(0))
+            else if (Input.GetMouseButton(0)) // For PC testing
                 swipeDelta = (Vector2)Input.mousePosition - startTouch;
         }
 
-        //Did we cross the distance?
-        if (swipeDelta.magnitude > 100)
+        // Did we cross the distance threshold?
+        if (swipeDelta.magnitude > 50) // Adjusted swipe threshold
         {
-            //Which direction?
             float x = swipeDelta.x;
             float y = swipeDelta.y;
+
+            // Determine swipe direction
             if (Mathf.Abs(x) > Mathf.Abs(y))
             {
-                //Left or Right
+                // Left or Right
                 if (x < 0)
                     swipeLeft = true;
                 else
@@ -68,7 +68,7 @@ public class SwipeManager : MonoBehaviour
             }
             else
             {
-                //Up or Down
+                // Up or Down
                 if (y < 0)
                     swipeDown = true;
                 else
@@ -77,7 +77,6 @@ public class SwipeManager : MonoBehaviour
 
             Reset();
         }
-
     }
 
     private void Reset()

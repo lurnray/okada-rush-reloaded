@@ -971,7 +971,7 @@ Transform:
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
   m_LocalRotation: {x: 0.18986493, y: -0.00024391084, z: -0.0012612859, w: 0.98180944}
-  m_LocalPosition: {x: -0, y: 13, z: -29}
+  m_LocalPosition: {x: 0, y: 14.8, z: -33.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1266,13 +1266,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 057f7a4e882687240be8c58f9da0c282, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 0}
-  direction: {x: 0, y: 0, z: 0}
-  forwardSpeed: 0
-  desiredLane: 1
-  laneDistance: 2.5
-  jumpForce: 0.2
-  gravity: -12
 --- !u!54 &1491480082
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1312,7 +1305,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21c48b087ed05004fac8d3b2111067e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forwardSpeed: 8
+  forwardSpeed: 5
   laneDistance: 2.5
   jumpForce: 10
   gravity: -12
