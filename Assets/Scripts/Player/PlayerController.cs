@@ -12,8 +12,18 @@ public class PlayerController : MonoBehaviour
      private int desiredLane = 1;//0:left, 1:middle, 2:right
      public float laneDistance = 2.5f;//The distance between tow lanes
 
+     public bool isGrounded;
+
      public float jumpForce;
      public float gravity = -12f;
+     public float jumpHeight = 2;
+     private Vector3 velocity;
+
+    // public Animator animator;
+     private bool isSliding = false;
+
+     public float slideDuration = 1.5f;
+
 
 
 
@@ -29,41 +39,34 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (!PlayerManager.isGameStarted)
+            return;
         direction.z = forwardSpeed;
 
         
 
-        if (controller.isGrounded)
+        if (isGrounded)
         {
-            direction.y = -1;
-            if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-           Jump(); 
-        }
-
-        if (SwipeManager.swipeUp)
+            if (SwipeManager.swipeUp)
                 Jump();
 
+            if (SwipeManager.swipeDown && !isSliding)
+                StartCoroutine(Slide());
         }
-        else 
+        else
         {
-            direction.y += gravity*Time.deltaTime;
-        }
+            velocity.y += gravity * Time.deltaTime;
+            if (SwipeManager.swipeDown && !isSliding)
+            {
+                StartCoroutine(Slide());
+                velocity.y = -10;
+            }                
 
-        
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            desiredLane++;
-            if (desiredLane == 3)
-                desiredLane = 2;
         }
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            desiredLane--;
-            if (desiredLane == -1)
-                desiredLane = 0;
-        }
+        controller.Move(velocity * Time.deltaTime);
 
+        //Gather the inputs on which lane we should be
         if (SwipeManager.swipeRight)
         {
             desiredLane++;
@@ -95,20 +98,21 @@ public class PlayerController : MonoBehaviour
                 controller.Move(diff);
         }
 
-     //   controller.Move(move * Time.deltaTime);
-
-    }
-
-    private void FixedUpdate()
-    {
-        controller.Move(direction * Time.fixedDeltaTime);
+        controller.Move(direction * Time.deltaTime);
     }
 
     private void Jump()
-    {
-        direction.y = jumpForce;
-
+    {   
+        StopCoroutine(Slide());
+        // animator.SetBool("isSliding", false);
+        // animator.SetTrigger("jump");
+        controller.center = Vector3.zero;
+        controller.height = 2;
+        isSliding = false;
+   
+        velocity.y = Mathf.Sqrt(jumpHeight * 2 * -gravity);
     }
+
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
         if(hit.transform.tag == "Obstacle")
@@ -116,5 +120,22 @@ public class PlayerController : MonoBehaviour
             PlayerManager.gameOver = true;
             
         }
+    }
+    private IEnumerator Slide()
+    {
+        isSliding = true;
+        // animator.SetBool("isSliding", true);
+        yield return new WaitForSeconds(0.25f/ Time.timeScale);
+        controller.center = new Vector3(0, -0.5f, 0);
+        controller.height = 1;
+
+        yield return new WaitForSeconds((slideDuration - 0.25f)/Time.timeScale);
+
+        // animator.SetBool("isSliding", false);
+
+        controller.center = Vector3.zero;
+        controller.height = 2;
+
+        isSliding = false;
     }
 }
