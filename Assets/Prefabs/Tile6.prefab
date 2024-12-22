@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2541569569834873658}
   - component: {fileID: 2606060245429270449}
   - component: {fileID: 5807868585900454527}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Road
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6884577205944972274}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tile6
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -199,6 +199,10 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 2a2a9baf1e9a1de47a6d6ea2f5a102b6, type: 3}
       propertyPath: m_Name
       value: RoadWorksBarrierLow
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 2a2a9baf1e9a1de47a6d6ea2f5a102b6, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 2a2a9baf1e9a1de47a6d6ea2f5a102b6, type: 3}
       propertyPath: m_TagString

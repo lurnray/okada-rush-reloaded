@@ -68,11 +68,11 @@ public class PlayerManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        //Start Game
-        // if (SwipeManager.tap  && !isGameStarted)
-        // {
+        // Start Game
+        if (SwipeManager.tap  && !isGameStarted)
+        {
             isGameStarted = true;
             Destroy(startingText);
-        // }
+        }
     }
 }

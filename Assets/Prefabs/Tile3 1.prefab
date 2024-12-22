@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &889531545105613161
+--- !u!1 &1061401426672105196
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,10 +8,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6103466069054397160}
-  - component: {fileID: 3365560382788296416}
-  - component: {fileID: 7219462188186766504}
-  - component: {fileID: 1511712036341427255}
+  - component: {fileID: 8740429757593552690}
+  - component: {fileID: 2137926050107584613}
+  - component: {fileID: 5519034021075854596}
+  - component: {fileID: 4605953709458901438}
   m_Layer: 3
   m_Name: Road
   m_TagString: Untagged
@@ -19,36 +19,36 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6103466069054397160
+--- !u!4 &8740429757593552690
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 889531545105613161}
+  m_GameObject: {fileID: 1061401426672105196}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 400, y: 1500, z: 17.054695}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7133906860439253513}
+  m_Father: {fileID: 5038574100745330909}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &3365560382788296416
+--- !u!33 &2137926050107584613
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 889531545105613161}
+  m_GameObject: {fileID: 1061401426672105196}
   m_Mesh: {fileID: -5495902117074765545, guid: 8796dabeaef217e4282a33fd3071df7d, type: 3}
---- !u!23 &7219462188186766504
+--- !u!23 &5519034021075854596
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 889531545105613161}
+  m_GameObject: {fileID: 1061401426672105196}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -86,13 +86,13 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &1511712036341427255
+--- !u!65 &4605953709458901438
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 889531545105613161}
+  m_GameObject: {fileID: 1061401426672105196}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -107,7 +107,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.02, y: 0.019999996, z: 0.019999996}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &1257956748377239477
+--- !u!1 &2357126018043415816
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -115,47 +115,47 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2891089442890520103}
-  - component: {fileID: 7013774929060453819}
-  - component: {fileID: 8956249624793129492}
-  - component: {fileID: 1434363978021447730}
-  m_Layer: 3
+  - component: {fileID: 1645425394792198128}
+  - component: {fileID: 5896624481295561926}
+  - component: {fileID: 7376251967387685953}
+  - component: {fileID: 2909996102278511495}
+  m_Layer: 0
   m_Name: TrafficCone
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2891089442890520103
+--- !u!4 &1645425394792198128
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1257956748377239477}
+  m_GameObject: {fileID: 2357126018043415816}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -2.62, y: 0.2, z: -11}
+  m_LocalPosition: {x: 2.75, y: 0.2, z: -11}
   m_LocalScale: {x: 100, y: 100, z: 9.611386}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7133906860439253513}
+  m_Father: {fileID: 5038574100745330909}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &7013774929060453819
+--- !u!33 &5896624481295561926
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1257956748377239477}
+  m_GameObject: {fileID: 2357126018043415816}
   m_Mesh: {fileID: -5495902117074765545, guid: 365582e6d0918ef44a5a3072dabf1bf1, type: 3}
---- !u!23 &8956249624793129492
+--- !u!23 &7376251967387685953
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1257956748377239477}
+  m_GameObject: {fileID: 2357126018043415816}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -192,13 +192,13 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &1434363978021447730
+--- !u!65 &2909996102278511495
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1257956748377239477}
+  m_GameObject: {fileID: 2357126018043415816}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -213,7 +213,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.016, y: 0.015999997, z: 0.17574263}
   m_Center: {x: 0, y: 0, z: 0.07987131}
---- !u!1 &8204719664964907176
+--- !u!1 &7774207779871652785
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -221,28 +221,28 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7133906860439253513}
-  m_Layer: 3
-  m_Name: Tile4
+  - component: {fileID: 5038574100745330909}
+  m_Layer: 0
+  m_Name: Tile3 1
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7133906860439253513
+--- !u!4 &5038574100745330909
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8204719664964907176}
+  m_GameObject: {fileID: 7774207779871652785}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 152}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 62}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6103466069054397160}
-  - {fileID: 2891089442890520103}
+  - {fileID: 8740429757593552690}
+  - {fileID: 1645425394792198128}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
