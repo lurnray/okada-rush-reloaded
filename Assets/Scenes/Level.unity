@@ -1454,7 +1454,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac30a55c9188ee4419fa4f359f1b58e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 478604552}
+  target: {fileID: 0}
 --- !u!1 &1088919060
 GameObject:
   m_ObjectHideFlags: 0
@@ -1585,6 +1585,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7714455434729668175, guid: c70e8e7fd2175eb4bbf2c67950d8bf3a, type: 3}
+      propertyPath: collisionParticle
+      value: 
+      objectReference: {fileID: 19860484, guid: 9513db16d881df54c9b88e94ef47490a, type: 3}
+    - target: {fileID: 7714455434729668175, guid: c70e8e7fd2175eb4bbf2c67950d8bf3a, type: 3}
+      propertyPath: obstacleCollision
+      value: 
+      objectReference: {fileID: 8300000, guid: 61d8d7d065264d6498bf461ecd9160fa, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1971,6 +1979,8 @@ MonoBehaviour:
   laneDistance: 2.5
   gravity: -12
   jumpHeight: 6
+  collisionParticle: {fileID: 0}
+  obstacleCollision: {fileID: 0}
   slideDuration: 1.5
   topLimit: 6
   lowerLimit: 1.2
