@@ -131,8 +131,10 @@ public class PlayerController : MonoBehaviour
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
+        Debug.Log("Collision detected with: " + hit.transform.name);
         if (hit.transform.tag == "Obstacle")
         {
+            Debug.Log("Playing collision particle effect.");
             collisionParticle.Play();
             playerAudio.PlayOneShot(obstacleCollision, 1.0f);
             Debug.Log("Game Over - Hit Obstacle");
